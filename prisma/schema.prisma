@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model NewHireRequests {
+  id                    String    @id @default(uuid())
+  submitted_date        DateTime  @default(now())
+  last_activity_date    DateTime?
+  completed_date        DateTime?
+  expected_start_date   DateTime
+  first_name            String    @db.VarChar(255)
+  last_name             String    @db.VarChar(255)
+  middle_name           String?   @db.VarChar(255)
+  manager_contact_name  String    @db.VarChar(255)
+  hr_contact_name       String    @db.VarChar(255)
+  new_hire_phone_number String    @db.VarChar(15)
+  location              String    @db.VarChar(255)
+  company               String    @db.VarChar(255)
+
+  @@map("new_hire_requests")
+}
