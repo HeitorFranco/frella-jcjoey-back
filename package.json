@@ -4,6 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
     "dev:server": "ts-node-dev --exit-child --respawn --transpile-only --watch src src/server.ts"
   },
   "dependencies": {

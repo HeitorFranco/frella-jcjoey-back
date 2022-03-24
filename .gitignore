@@ -3,3 +3,4 @@ node_modules
 docker-compose.yml
 yarn-error.log
 yarn.lock
+dist
